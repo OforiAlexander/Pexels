@@ -1,0 +1,23 @@
+{
+    "name": "pexels",
+    "version": "1.0.0",
+    "description": "A Pexels.com Clone With The Pexels Api",
+    "main": "main.js",
+    "scripts": {
+        "start": "node main.js",
+        "test": "jest"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/OforiAlexander/Pexels.git"
+    },
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/OforiAlexander/Pexels/issues"
+    },
+    "homepage": "https://github.com/OforiAlexander/Pexels#readme",
+    "devDependencies": {
+        "jest": "^29.5.0"
+    }
+}
