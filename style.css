@@ -1,0 +1,157 @@
+  @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,800&display=swap');
+  * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      max-width: 100%;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+  }
+  
+  body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font: size 14px;
+      line-height: 1.5rem;
+      color: #fff;
+  }
+  /* universals */
+  
+  a {
+      text-decoration: none;
+      color: inherit;
+      font-size: inherit;
+  }
+  
+  .section-pi {
+      padding: 80px 15px;
+  }
+  
+  .section-m-p1 {
+      padding: 0 30px;
+      margin: 30px 0;
+  }
+  
+  .normal-btn {
+      padding: 0 20px;
+      margin-left: 15px;
+  }
+  
+  .top-nav {
+      display: flex;
+      padding: 0 30px;
+      width: 100%;
+      margin: 0 25px;
+      align-items: center;
+      justify-content: space-between;
+  }
+  /* univesal others */
+  
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+      color: #fff;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      fill: #fff;
+      line-height: 2.5rem;
+  }
+  
+  .trending-btn {
+      color: hsla(0, 0%, 100%, .7);
+      display: inline-block;
+  }
+  
+  #listings {
+      display: flex;
+      gap: 29px;
+      padding: 18px;
+      list-style: none;
+      font-size: 1rem;
+      font-weight: 600;
+      color: #fff;
+      fill: #fff;
+  }
+  
+  .input-selector::placeholder {
+      font-size: 18px;
+      font-weight: 600;
+  }
+  
+  .SearchInput_input__UT7ss {
+      left: 0;
+      display: inline-flex;
+      width: calc(100% - 55px);
+      padding: 15px 4px 15px 20px;
+      color: #7f7f7f;
+      border-radius: 0;
+      border-top-left-radius: 8px;
+      border-bottom-left-radius: 8px;
+  }
+  
+  .input-search-btn {
+      padding: 1px 15px;
+      position: absolute;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 400;
+      font-size: 14px;
+      top: 0;
+      bottom: 0;
+      height: 100%;
+      border: 1px solid #f7f7f7;
+      background: #f7f7f7;
+  }
+  /* Landing Page */
+  
+  header {
+      height: 80vh;
+  }
+  
+  .upper-bar {
+      display: flex;
+  }
+  
+  .upper-bar img {
+      width: 50px;
+      height: 50px;
+  }
+  
+  .upper-bar span {
+      padding: 12px;
+      font-size: 1.5rem;
+      font-weight: 500;
+      font-family: inherit;
+  }
+  
+  .background-img {
+      background-image: url(asserts/img/bg1.jpg);
+      background-position: center center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      height: 100%;
+  }
+  
+  .listing-upper {
+      height: 15vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+  }
+  /* background opacity black */
+  
+  .bgcolor {
+      background-color: #000;
+      height: 80vh;
+      position: absolute;
+      top: 0;
+  }
+  /* search properties */
+  
+  .p-classes-search-input {
+      border: solid;
+      text-align: center;
+  }
