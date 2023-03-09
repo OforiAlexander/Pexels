@@ -80,15 +80,84 @@
 
     <main class="section-m-p1">
         <div class="btn-center">
-            <button><a href="index.html">Home</a></button>
-            <button><a href="index.html">Videos</a></button>
-            <button><a href="index.html">LeaderBoard</a></button>
-            <button><a href="index.html">Challanges</a></button>
+            <button id="button">Home</button>
+            <button id="button">Videos</button>
+            <button id="button">LeaderBoard</button>
+            <button id="button">Challanges</button>
         </div>
         <div class="free-stock-flex">
             <h3>Free Stock Photos</h3>
         </div>
+
+        <div class="photos-area-random" id="photos-main-container-random">
+
+        </div>
     </main>
+
+
+    <!-- js section and functions for homepage images -->
+    <script>
+        const photosCn = document.getElementById('photos-main-container-random');
+
+        const apiKey = 'jcZGeGMCLey8jUuI08tKEL3XPTb2RGDd4HxFsxc8tmSs7FBvgDKNFBWN';
+        //apikey
+
+        //response
+        async function getImg() {
+            let url = 'https://api.pexels.com/v1/search?query=random'
+            const response = await fetch(url, {
+                    method: 'GET',
+                    mode: 'cors',
+                    headers: {
+                        'Authorization': apiKey
+
+                    }
+                })
+                .then(response => {
+                    return response.json()
+                })
+                .then(data => {
+                    //let gottenPhotoes = getPhotos(data.photos);
+                    console.log(data.photos);
+                    getPhotos(data.photos);
+                    //getting single array properties with the for loop
+                    //createDiv(data)
+
+                    // return gottenPhotoes;
+                }).catch((err) => {
+                    console.log('Error Occured At:' + err.message);
+                })
+        }
+        //photos
+        getImg();
+
+        function getPhotos(photos) {
+            photos.map(photo => {
+                const divs = document.createElement('div')
+                divs.classList = 'divs-flex'
+                const img = document.createElement('img');
+                img.src = photo.src.original
+                divs.appendChild(img)
+                photosCn.appendChild(divs)
+            })
+        }
+
+
+        //btn active function
+        const btnCen = document.querySelector('.btn-center')
+        const btnEl = document.getElementById('button');
+
+        btnEl.addEventListener('click', (event) => {
+            const id = event.target.id;
+            if (id) {
+                btnEl.classList.add('active')
+            } else {
+                btnEl.classList.remove('active')
+
+            }
+            console.log(id)
+        })
+    </script>
 </body>
 
 </html>

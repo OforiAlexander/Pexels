@@ -275,6 +275,11 @@
       color: #1a1a1a;
   }
   
+  #button.active {
+      background-color: #000;
+      color: #fff;
+  }
+  
   .free-stock-flex {
       margin-bottom: 30px;
   }
@@ -285,6 +290,25 @@
       font-weight: 600;
       fill: #2c343e;
       margin-top: 13px;
+  }
+  /* random homepage photos section */
+  
+  .photos-area-random {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+  }
+  
+  .photos-area-random .divs-flex {
+      flex: 1 1 30%;
+      /*grow | shrink | basis */
+  }
+  
+  .divs-flex {
+      background-color: #fff4e6;
+      margin-right: 23px;
+      cursor: pointer;
   }
   /* Responsive Media Queries */
   
