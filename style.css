@@ -62,6 +62,8 @@
   .trending-btn {
       color: hsla(0, 0%, 100%, .7);
       display: inline-block;
+      border: none;
+      cursor: pointer;
   }
   
   #listings {
@@ -152,6 +154,219 @@
   /* search properties */
   
   .p-classes-search-input {
-      border: solid;
-      text-align: center;
+      text-align: left;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+  }
+  
+  .centered {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 600px;
+      max-width: 630px;
+  }
+  
+  .p-classes-search-input h1 {
+      font-size: 1.9rem;
+      font-weight: 800;
+      line-height: 2.8rem;
+  }
+  
+  .p-classes-search-input form {
+      margin-top: 30px;
+      width: 100%;
+  }
+  
+  .input-selector {
+      padding: 15px 4px 15px 20px;
+      border: none;
+      outline: none;
+      left: 0;
+      display: inline-flex;
+      width: calc(100% - 55px);
+      color: #7f7f7f;
+      border-radius: 0;
+      border-top-left-radius: 8px;
+      border-bottom-left-radius: 8px;
+  }
+  
+  .p-classes-search-input .centered form button {
+      padding: 12px 25px;
+      margin-top: 22px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 400;
+      border-radius: 8px;
+      font-size: 14px;
+      border: 1px solid #f7f7f7;
+      background: #f7f7f7;
+      cursor: pointer;
+      transition: all 0.3s ease-in-out;
+  }
+  
+  .p-classes-search-input .centered form button:hover {
+      background-color: #161618;
+      border: 1px solid #161618;
+      color: #fff;
+  }
+  
+  .trending {
+      width: 100%;
+      padding: 6px;
+      text-align: left;
+  }
+  
+  .alpah-span {
+      color: rgba(255, 255, 255, 0.7);
+      fill: rgba(255, 255, 255, 0.7);
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+  }
+  
+  .trending ul {
+      display: flex;
+      list-style: none;
+      justify-content: flex-start;
+      gap: 8px;
+      color: #fff;
+  }
+  
+  .trending ul li a {
+      color: #fff;
+      fill: #fff;
+      font-size: 1rem;
+      font-weight: 600;
+  }
+  
+  .trending ul li a:hover {
+      opacity: 0.7;
+  }
+  /* Main Section */
+  
+  .btn-center {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 8px;
+  }
+  
+  .btn-center button {
+      padding: 12px 25px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 600;
+      border-radius: 25px;
+      color: #4a4a4a;
+      font-size: 1rem;
+      border: 1px solid #f7f7f7;
+      background: #f7f7f7;
+      cursor: pointer;
+      margin-bottom: 30px;
+      transition: all 0.3s ease-in-out;
+  }
+  
+  .btn-center button:hover {
+      color: #1a1a1a;
+  }
+  
+  .free-stock-flex {
+      margin-bottom: 30px;
+  }
+  
+  .free-stock-flex h3 {
+      color: #2c343e;
+      font-size: 1.5rem;
+      font-weight: 600;
+      fill: #2c343e;
+      margin-top: 13px;
+  }
+  /* Responsive Media Queries */
+  
+  @media (max-width: 900px) {
+      header {
+          height: 50vh;
+          max-height: 80vh;
+      }
+      .listing-upper {
+          height: 9vh;
+          min-height: 50px;
+      }
+      .p-classes-search-input {
+          padding-top: 70px;
+      }
+  }
+  
+  @media (max-width: 1000px) {
+      header {
+          height: 60vh;
+          max-height: 60vh;
+      }
+      .listing-upper {
+          height: 12vh;
+      }
+      .p-classes-search-input {
+          padding-top: 70px;
+      }
+  }
+  
+  @media (max-width: 600px) {
+      header {
+          height: 70vh;
+          max-height: 70vh;
+      }
+      .listing-upper {
+          height: 12vh;
+      }
+      .p-classes-search-input {
+          padding-top: 50px;
+          padding-left: 18px;
+      }
+      .p-classes-search-input h1 {
+          font-size: 1.6rem;
+          font-weight: 700;
+          line-height: 2rem;
+      }
+      .top-nav {
+          padding: 0 10px;
+      }
+      .upper-bar span {
+          font-size: 1.2rem;
+      }
+  }
+  
+  @media (max-width: 450px) {
+      header {
+          height: 60vh;
+          max-height: 60vh;
+      }
+      .listing-upper {
+          height: 12vh;
+      }
+      .p-classes-search-input {
+          padding-top: 50px;
+          padding-left: 18px;
+      }
+      .p-classes-search-input h1 {
+          font-size: 1.6rem;
+          font-weight: 700;
+          line-height: 2rem;
+      }
+      .top-nav {
+          padding: 0 10px;
+      }
+      .upper-bar span {
+          font-size: 1.2rem;
+      }
+      .btn-center {
+          width: 100%;
+      }
+      .btn-center button {
+          padding: 0px 20px;
+      }
   }
