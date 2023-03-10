@@ -80,7 +80,7 @@
 
     <main class="section-m-p1">
         <div class="btn-center">
-            <button id="button">Home</button>
+            <button id="button" class="active">Home</button>
             <button id="button">Videos</button>
             <button id="button">LeaderBoard</button>
             <button id="button">Challanges</button>
@@ -139,23 +139,34 @@
                 img.src = photo.src.original
                 divs.appendChild(img)
                 photosCn.appendChild(divs)
+
+                //div
+                const d = document.createElement('div');
+                d.classList = 'download-inner';
+                d.innerHTML = `<i class="fa-solid fa-download"></i>`;
+                divs.appendChild(d)
+                console.log(d)
             })
         }
 
 
+
+
         //btn active function
         const btnCen = document.querySelector('.btn-center')
-        const btnEl = document.getElementById('button');
+        const btnEl = document.querySelectorAll('button');
 
-        btnEl.addEventListener('click', (event) => {
+        btnCen.addEventListener('click', (event) => {
             const id = event.target.id;
-            if (id) {
-                btnEl.classList.add('active')
-            } else {
-                btnEl.classList.remove('active')
-
-            }
+            console.log(btnCen)
             console.log(id)
+            if (id) {
+                btnEl.forEach((btn) => {
+                    btn.classList.remove("active");
+                })
+                event.target.classList.add("active");
+            }
+
         })
     </script>
 </body>
