@@ -109,10 +109,6 @@
   }
   /* Landing Page */
   
-  header {
-      height: 80vh;
-  }
-  
   .upper-bar {
       display: flex;
   }
@@ -155,6 +151,7 @@
   
   .p-classes-search-input {
       text-align: left;
+      padding: 5% 0;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -330,6 +327,9 @@
       color: #fff;
       position: absolute;
       bottom: 18px;
+      background-color: #000;
+      opacity: 0.4;
+      border-radius: 22px;
       font-size: 1.5rem;
       right: 18px;
       z-index: 3;
@@ -340,14 +340,16 @@
   .download-inner i:hover {
       color: #fcfcfc;
       fill: #fcfcfc;
+      opacity: 0.8;
+  }
+  /* search html */
+  
+  #btn:hover {
+      background: #2c343e;
   }
   /* Responsive Media Queries */
   
   @media (max-width: 900px) {
-      header {
-          height: 50vh;
-          max-height: 80vh;
-      }
       .listing-upper {
           height: 9vh;
           min-height: 50px;
@@ -358,10 +360,6 @@
   }
   
   @media (max-width: 1000px) {
-      header {
-          height: 60vh;
-          max-height: 60vh;
-      }
       .listing-upper {
           height: 12vh;
       }
@@ -371,10 +369,6 @@
   }
   
   @media (max-width: 600px) {
-      header {
-          height: 70vh;
-          max-height: 70vh;
-      }
       .listing-upper {
           height: 12vh;
       }
@@ -396,10 +390,6 @@
   }
   
   @media (max-width: 450px) {
-      header {
-          height: 60vh;
-          max-height: 60vh;
-      }
       .listing-upper {
           height: 12vh;
       }

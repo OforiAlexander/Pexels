@@ -44,16 +44,20 @@ function getPhotos(photos) {
         //div
         const d = document.createElement('div');
         d.classList = 'download-inner';
-        d.innerHTML = `<i class="fa-solid fa-download"></i>`;
+        d.innerHTML = `<i class="fa-solid fa-download" onclick="download()"></i>`;
         divs.appendChild(d)
         console.log(d)
     })
 }
 
+//icon function turned onclick function to download
+function download() {
+    alert('working')
+}
 
 
 
-//btn active function
+//btn active colored black function
 const btnCen = document.querySelector('.btn-center')
 const btnEl = document.querySelectorAll('button');
 
@@ -69,3 +73,11 @@ btnCen.addEventListener('click', (event) => {
     }
 
 })
+
+//export
+module.exports = {
+    apiKey,
+    photosCn,
+    getPhotos,
+    download
+}
