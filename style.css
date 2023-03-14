@@ -310,9 +310,6 @@
           width: calc(100% - 10px);
           margin-left: 28px;
       }
-      #listings {
-          display: none;
-      }
   }
   /* random homepage photos section */
   
@@ -432,6 +429,9 @@
           display: flex;
           flex-direction: row;
           flex-wrap: wrap;
+      }
+      #listings {
+          display: none;
       }
   }
   
