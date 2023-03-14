@@ -1,11 +1,12 @@
 const photosCn = document.getElementById('photos-main-container-random');
 
 const apiKey = 'jcZGeGMCLey8jUuI08tKEL3XPTb2RGDd4HxFsxc8tmSs7FBvgDKNFBWN';
-//apikey
+const urls = 'https://api.pexels.com/v1/search?query='
+    //apikey
 
 //response
 async function getImg() {
-    let url = 'https://api.pexels.com/v1/search?query=random'
+    let url = urls + 'random'
     const response = await fetch(url, {
             method: 'GET',
             mode: 'cors',
@@ -44,15 +45,38 @@ function getPhotos(photos) {
         //div
         const d = document.createElement('div');
         d.classList = 'download-inner';
-        d.innerHTML = `<i class="fa-solid fa-download" onclick="download()"></i>`;
+        const i = document.createElement('i');
+        i.classList = 'fa-solid fa-download'
+        i.type = 'button';
+        i.dataset.download = photo.id;
+        d.appendChild(i);
         divs.appendChild(d)
+
+        i.addEventListener('click', () => {
+
+            downloadImage(img.src, photo.photographer)
+        })
         console.log(d)
     })
 }
 
 //icon function turned onclick function to download
-function download() {
-    alert('working')
+async function downloadImage(imageSrc, photoName) {
+    const image = await fetch(imageSrc)
+    const imageBlog = await image.blob()
+    const imageURL = URL.createObjectURL(imageBlog)
+
+    const link = document.createElement('a')
+    link.href = imageURL
+    link.download = photoName;
+    console.log(link.download)
+    document.body.appendChild(link)
+    link.click()
+    document.body.removeChild(link)
+
+    //consoles
+    console.log(imageSrc)
+    console.log(link.href)
 }
 
 
@@ -75,9 +99,16 @@ btnCen.addEventListener('click', (event) => {
 })
 
 //export
-module.exports = {
-    apiKey,
-    photosCn,
-    getPhotos,
-    download
-}
+const formEl = document.getElementById('form');
+const inputEl = document.getElementById('search')
+formEl.addEventListener('submit', (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    e.preventDefault();
+
+    const searchResponse = inputEl.value;
+    localStorage.setItem('Search-Name', searchResponse)
+    window.location.href = 'search-area.html'
+        // getImg()
+        // div.innerHTML = ''
+})

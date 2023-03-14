@@ -1,5 +1,7 @@
 const apiKey = 'jcZGeGMCLey8jUuI08tKEL3XPTb2RGDd4HxFsxc8tmSs7FBvgDKNFBWN';
 //apikey
+//localStoragecall
+
 
 const formEl = document.getElementById('form');
 const searchEl = document.getElementById('search');
@@ -96,8 +98,14 @@ formEl.addEventListener('submit', (e) => {
     e.stopPropagation();
     e.preventDefault();
 
-    getImg()
-    div.innerHTML = ''
+    let currentSearchEl = localStorage.getItem('Search-Name');
+    if (searchEl == undefined) {
+        searchEl.value = currentSearchEl
+    } else {
+        getImg()
+        div.innerHTML = ''
+
+    }
 })
 
 //console.log(searchImage)
