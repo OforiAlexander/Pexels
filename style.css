@@ -232,10 +232,13 @@
   }
   
   .trending ul {
+      flex-wrap: wrap;
       display: flex;
       list-style: none;
       justify-content: flex-start;
       gap: 8px;
+      align-items: center;
+      width: 100%;
       color: #fff;
   }
   
@@ -400,6 +403,12 @@
   }
   
   @media (max-width: 600px) {
+      .photos-area-random {
+          padding: 34px 8px;
+      }
+      .download-inner i {
+          font-size: 0.7rem;
+      }
       .listing-upper {
           height: 12vh;
       }
