@@ -323,12 +323,12 @@
   }
   
   .photos-area-random .divs-flex {
-      flex: 1 1 30%;
+      flex: 1 1 auto;
       /*grow | shrink | basis */
   }
   
   .divs-flex {
-      background-color: #fff4e6;
+      background-color: #fff4f6;
       margin-right: 23px;
       cursor: pointer;
       position: relative;
@@ -355,10 +355,10 @@
       background-color: #000;
       opacity: 0.4;
       border-radius: 22px;
-      font-size: 1.5rem;
-      right: 18px;
+      font-size: 1rem;
+      right: 30%;
       z-index: 3;
-      font-weight: 700;
+      font-weight: 600;
       padding: 12px;
   }
   

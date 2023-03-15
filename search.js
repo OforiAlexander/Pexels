@@ -9,7 +9,7 @@ let div = document.getElementById('photos-main-container-random');
 
 //response
 async function getImg() {
-    let url = 'https://api.pexels.com/v1/search?query=' + searchEl.value
+    let url = 'https://api.pexels.com/v1/search?query=' + searchEl.value + '&per_page=50&page=1'
     const response = await fetch(url, {
             method: 'GET',
             mode: 'cors',
@@ -44,7 +44,7 @@ function createDiv(data) {
         mr.id = n.id;
         mr.classList = 'divs-flex';
         let ig = document.createElement('img');
-        ig.src = n.src.original;
+        ig.src = n.src.small;
         ig.id = n.id;
         const d = document.createElement('div');
         d.classList = 'download-inner';

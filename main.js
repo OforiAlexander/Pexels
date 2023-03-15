@@ -6,7 +6,7 @@ const urls = 'https://api.pexels.com/v1/search?query='
 
 //response
 async function getImg() {
-    let url = urls + 'random'
+    let url = urls + 'random' + '&per_page=50&page=1'
     const response = await fetch(url, {
             method: 'GET',
             mode: 'cors',
@@ -38,7 +38,7 @@ function getPhotos(photos) {
         const divs = document.createElement('div')
         divs.classList = 'divs-flex'
         const img = document.createElement('img');
-        img.src = photo.src.original
+        img.src = photo.src.small
         divs.appendChild(img)
         photosCn.appendChild(divs)
 
