@@ -337,6 +337,12 @@
   .divs-flex img {
       width: fit-content;
   }
+  
+  @media (max-width:480px) {
+      .divs-flex img {
+          width: 100%;
+      }
+  }
   /* download btn */
   
   .download-inner {
