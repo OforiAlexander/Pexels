@@ -1,6 +1,7 @@
-const photosCn = document.getElementById('photos-main-container-random');
+//imports
+import { apiKey } from "./search.js";
+import { photosCn } from "./search.js";
 
-const apiKey = 'jcZGeGMCLey8jUuI08tKEL3XPTb2RGDd4HxFsxc8tmSs7FBvgDKNFBWN';
 const urls = 'https://api.pexels.com/v1/search?query='
     //apikey
 
@@ -27,7 +28,7 @@ async function getImg() {
 
             // return gottenPhotoes;
         }).catch((err) => {
-            console.log('Error Occured At:' + err.message);
+            console.log('Error At ' + err.message);
         })
 }
 //photos
@@ -99,16 +100,17 @@ btnCen.addEventListener('click', (event) => {
 })
 
 //export
-const formEl = document.getElementById('form');
-const inputEl = document.getElementById('search')
+import { searchEl } from "./search.js";
+import { formEl } from "./search.js";
+import { getImgs } from "./search.js";
 formEl.addEventListener('submit', (e) => {
     e.preventDefault();
     e.stopPropagation();
     e.preventDefault();
 
-    const searchResponse = inputEl.value;
+    const searchResponse = searchEl.value;
     localStorage.setItem('Search-Name', searchResponse)
-    window.location.href = 'search-area.html'
-        // getImg()
-        // div.innerHTML = ''
+        //window.location.href = 'search-area.html'
+    getImgs()
+    photosCn.innerHTML = ''
 })

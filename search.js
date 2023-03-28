@@ -1,14 +1,14 @@
-const apiKey = 'jcZGeGMCLey8jUuI08tKEL3XPTb2RGDd4HxFsxc8tmSs7FBvgDKNFBWN';
+export const apiKey = 'jcZGeGMCLey8jUuI08tKEL3XPTb2RGDd4HxFsxc8tmSs7FBvgDKNFBWN';
 //apikey
 //localStoragecall
 
 
-const formEl = document.getElementById('form');
-const searchEl = document.getElementById('search');
-let div = document.getElementById('photos-main-container-random');
+export const formEl = document.getElementById('form');
+export const searchEl = document.getElementById('search');
+export let photosCn = document.getElementById('photos-main-container-random');
 
 //response
-async function getImg() {
+export async function getImgs() {
     let url = 'https://api.pexels.com/v1/search?query=' + searchEl.value + '&per_page=50&page=1'
     const response = await fetch(url, {
             method: 'GET',
@@ -30,7 +30,7 @@ async function getImg() {
 
             // return gottenPhotoes;
         }).catch((err) => {
-            console.log('Error Occured At:' + err.message);
+            console.log('Error At ' + err.message);
         })
 }
 
@@ -66,7 +66,7 @@ function createDiv(data) {
         mr.appendChild(ig)
         mr.append(d);
 
-        div.append(mr)
+        photosCn.append(mr)
         console.log(mr)
     }
 
@@ -102,8 +102,8 @@ formEl.addEventListener('submit', (e) => {
     if (searchEl == undefined) {
         searchEl.value = currentSearchEl
     } else {
-        getImg()
-        div.innerHTML = ''
+        getImgs()
+        photosCn.innerHTML = ''
 
     }
 })
