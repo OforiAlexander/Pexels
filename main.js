@@ -4,6 +4,15 @@ import { photosCn } from "./search.js";
 
 const urls = 'https://api.pexels.com/v1/search?query='
     //apikey
+const closeEl = document.querySelector('.close-icon')
+const popupEl = document.querySelector('.popup-container')
+const containerEl = document.querySelector('.nnnww')
+closeEl.addEventListener('click', () => {
+    popupEl.classList.add('active')
+    containerEl.classList.remove('active')
+})
+
+
 
 //response
 async function getImg() {
@@ -53,9 +62,14 @@ function getPhotos(photos) {
         d.appendChild(i);
         divs.appendChild(d)
 
-        i.addEventListener('click', () => {
 
-            downloadImage(img.src, photo.photographer)
+        i.addEventListener('click', () => {
+            // downloadImage(img.src, photo.photographer)
+            popupEl.classList.remove('active')
+            containerEl.classList.add('active')
+
+            popupimg(photo)
+            console.log(photo)
         })
         console.log(d)
     })
@@ -114,3 +128,37 @@ formEl.addEventListener('submit', (e) => {
     getImgs()
     photosCn.innerHTML = ''
 })
+
+
+//side for popup img
+const popupSidedEl = document.querySelector('#popup-img');
+const photographerEl = document.querySelector('.popup-by')
+export async function popupimg(photos) {
+    let { src, photographer } = photos;
+    popupSidedEl.innerHTML = `<img src=${src.medium} />`;
+    photographerEl.innerHTML = `<p>Photo By: ${photographer}</p>`
+    console.log(photographer, src)
+    spanEventListner(src, photographer)
+        // return popupSidedEl.innerHTML = `<img src="${imageN}" />`
+}
+popupimg();
+
+//event  listeners
+
+
+
+const subnavContent = document.querySelector('.subnav-content');
+const spanElements = subnavContent.querySelectorAll('span');
+
+function spanEventListner(src, photographer) {
+    spanElements.forEach((span) => {
+        span.addEventListener('click', () => {
+            const size = span.innerText.toLowerCase();
+            const imageSrc = src[size];
+            console.log(imageSrc)
+            downloadImage(imageSrc, photographer)
+            console.log(span.innerText);
+        });
+    })
+}
+spanEventListner(src, photographer)

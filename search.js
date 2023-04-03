@@ -35,6 +35,7 @@ export async function getImgs() {
 }
 
 //?create a new function to map and download images
+import { popupimg } from './main.js'
 
 function createDiv(data) {
     for (let i = 0; i < data.photos.length; i++) {
@@ -58,8 +59,9 @@ function createDiv(data) {
         //download btn eventlistener
 
         btn.addEventListener('click', () => {
+            popupimg(n)
 
-            downloadImage(ig.src, n.photographer)
+            // downloadImage(ig.src, n.photographer)
         })
 
 
