@@ -6,6 +6,17 @@ export const apiKey = 'jcZGeGMCLey8jUuI08tKEL3XPTb2RGDd4HxFsxc8tmSs7FBvgDKNFBWN'
 export const formEl = document.getElementById('form');
 export const searchEl = document.getElementById('search');
 export let photosCn = document.getElementById('photos-main-container-random');
+import { spanEventListner } from './main.js';
+import { subnavContent } from './main.js';
+import { spanElements } from './main.js';
+
+const closeEl = document.querySelector('.close-icon')
+const popupEl = document.querySelector('.popup-container')
+const containerEl = document.querySelector('.nnnww')
+closeEl.addEventListener('click', () => {
+    popupEl.classList.add('active')
+    containerEl.classList.remove('active')
+})
 
 //response
 export async function getImgs() {
@@ -35,7 +46,6 @@ export async function getImgs() {
 }
 
 //?create a new function to map and download images
-import { popupimg } from './main.js'
 
 function createDiv(data) {
     for (let i = 0; i < data.photos.length; i++) {
@@ -59,7 +69,11 @@ function createDiv(data) {
         //download btn eventlistener
 
         btn.addEventListener('click', () => {
+            popupEl.classList.remove('active')
+            containerEl.classList.add('active')
+
             popupimg(n)
+            console.log(n)
 
             // downloadImage(ig.src, n.photographer)
         })
@@ -112,3 +126,13 @@ formEl.addEventListener('submit', (e) => {
 
 //console.log(searchImage)
 //console.log(searchImage)
+const popupSidedEl = document.querySelector('#popup-img');
+const photographerEl = document.querySelector('.popup-by')
+async function popupimg(photos) {
+    let { src, photographer } = photos;
+    popupSidedEl.innerHTML = `<img src=${src.medium} />`;
+    photographerEl.innerHTML = `<p>Photo By: ${photographer}</p>`
+    console.log(photographer, src)
+    spanEventListner(src, photographer)
+        // return popupSidedEl.innerHTML = `<img src="${imageN}" />`
+}

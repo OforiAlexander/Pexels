@@ -75,6 +75,7 @@ function getPhotos(photos) {
     })
 }
 
+
 //icon function turned onclick function to download
 async function downloadImage(imageSrc, photoName) {
     const image = await fetch(imageSrc)
@@ -147,10 +148,10 @@ popupimg();
 
 
 
-const subnavContent = document.querySelector('.subnav-content');
-const spanElements = subnavContent.querySelectorAll('span');
+export const subnavContent = document.querySelector('.subnav-content');
+export const spanElements = subnavContent.querySelectorAll('span');
 
-function spanEventListner(src, photographer) {
+export function spanEventListner(src, photographer) {
     spanElements.forEach((span) => {
         span.addEventListener('click', () => {
             const size = span.innerText.toLowerCase();
@@ -161,4 +162,3 @@ function spanEventListner(src, photographer) {
         });
     })
 }
-spanEventListner(src, photographer)
